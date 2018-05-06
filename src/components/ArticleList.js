@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
+import Article from './Article';
+import Paginate from './Paginate';
 
 
 class ArticleList extends Component {
+
+  renderArticles() {
+    return this.props.articles.map((article) => {
+      return (
+        <Article {...article}/>
+      )
+    });
+  }
+
   render() {
     return (
-      <ul>
-        <li>Article 1</li>
-        <li>Article 2</li>
-        <li>Article 3</li>
-      </ul>
+      <div>
+        { this.renderArticles() }
+        <Paginate />
+      </div>
     );
   }
 }

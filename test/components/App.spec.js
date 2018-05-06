@@ -3,15 +3,12 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import App from '../../src/components/App';
 import ArticleList from '../../src/components/ArticleList';
+import Dashboard from '../../src/components/Dashboard';
 
 describe('Reading App', () => {
-  it('is existing', () => {
+  it('has a dashboard', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains("Reading News")).to.equal(true);
+    expect(wrapper.find(Dashboard)).to.have.length(1);
   });
 
-  it('have a list of articles', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.contains(<ArticleList />)).to.equal(true);
-  });
 });
