@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import ArticleList from './ArticleList';
-import Dashboard from './Dashboard';
+import React, { Component } from 'react'
+import './App.css'
+import Dashboard from './Dashboard'
 
 class App extends Component {
   render() {
@@ -9,8 +8,9 @@ class App extends Component {
       <div className="App">
         <Dashboard />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
+

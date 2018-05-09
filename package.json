@@ -12,10 +12,12 @@
   "author": "Ngo Lam",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -28,8 +30,12 @@
     "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "fetch-mock": "^6.3.0",
     "ignore-styles": "^5.0.1",
     "mocha": "^5.1.1",
+    "moxios": "^0.4.0",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.7.0",
     "webpack-cli": "^2.1.2",
