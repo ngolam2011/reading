@@ -9,7 +9,14 @@ export const fetchArticles = () => dispatch => {
     .then(articles => {
       return dispatch({
         type: FETCH_ARTICLES,
-        payload: articles.data.response.docs
+        payload: handleData(articles)
       })
     })
+}
+
+const handleData = (data) => {
+  return data.data.response.docs.map(article => {
+    const { snippet, multimedia, pub_date, source, _id } = article
+    return { snippet, multimedia, pub_date, source, _id }
+  })
 }
