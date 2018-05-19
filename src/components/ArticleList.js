@@ -12,6 +12,7 @@ class ArticleList extends Component {
   }
 
   renderArticles() {
+    console.log("LOGGING", this.props.articles)
     return this.props.articles.map((article) => {
       return (
         <Article key={article._id} {...article}/>
