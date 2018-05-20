@@ -12,23 +12,26 @@ describe('Article List Component', () => {
   let articles, wrapper, store
 
   beforeEach(() => {
-    const payload = [
-      {
-        snippet: 'LEAD: Textron Inc',
-        source: 'The New York Times',
-        multimedia: [],
-        pub_date: '1990-10-19T00:00:00Z',
-        _id: '4fd1b09a8eb7c8105d6d2100'
-      },
-      {
-        snippet: 'LEAD: Pat Dye, the Auburn',
-        source: 'The New York Times',
-        multimedia: [],
-        pub_date: '1990-10-01T00:00:00Z',
-        _id: '4fd1b09a8eb7c8105d6d2108'
-      }
+    const payload = { 
+      items : [
+        {
+          snippet: 'LEAD: Textron Inc',
+          source: 'The New York Times',
+          multimedia: [],
+          pub_date: '1990-10-19T00:00:00Z',
+          _id: '4fd1b09a8eb7c8105d6d2100'
+        },
+        {
+          snippet: 'LEAD: Pat Dye, the Auburn',
+          source: 'The New York Times',
+          multimedia: [],
+          pub_date: '1990-10-01T00:00:00Z',
+          _id: '4fd1b09a8eb7c8105d6d2108'
+        }
 
-    ]
+      ],
+      isGetting: false
+    }
     store = mockStore({ articles: payload})
     wrapper =shallowWithStore(<ArticleList />, store)
 

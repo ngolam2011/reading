@@ -12,27 +12,34 @@ class ArticleList extends Component {
   }
 
   renderArticles() {
-    console.log("LOGGING", this.props.articles)
-    return this.props.articles.map((article) => {
-      return (
-        <Article key={article._id} {...article}/>
-      )
-    })
+    return (
+      <div>
+      { this.props.articles.map((article) => {
+          return (
+            <Article key={article._id} {...article}/>
+          )
+        })
+      }
+        <Paginate />
+      </div>
+    )
   }
 
   render() {
     return (
       <div>
-        { this.props.articles.length ? this.renderArticles() : <h3>Loading...</h3> }
-        <Paginate />
+        { !this.props.isGetting ? this.renderArticles() : <h3>Loading...</h3> }
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ articles }) => {
+const mapStateToProps = (state) => {
+  const {items: articles, isGetting } = state.articles
+
   return {
-    articles
+    articles,
+    isGetting
   }
 }
 

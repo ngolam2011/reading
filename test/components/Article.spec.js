@@ -12,7 +12,6 @@ describe('<Article/>', () => {
   it('shows all properties of an article', () => {
     const article = { 
       snippet: 'Snippet 1',
-      multimedia: 'Multimedia 1',
       pub_date: 'Public Date',
       source: 'Source'
     };
@@ -20,7 +19,6 @@ describe('<Article/>', () => {
     wrapper.setProps(article);
 
     expect(wrapper.contains('Snippet 1')).to.equal(true);
-    expect(wrapper.contains('Multimedia 1')).to.equal(true);
     expect(wrapper.contains('Public Date')).to.equal(true);
     expect(wrapper.contains('Source')).to.equal(true);
   });
