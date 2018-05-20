@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import Article from './Article'
 import Paginate from './Paginate'
 import { connect } from 'react-redux'
-import { fetchArticles } from '../../src/actions'
+import { fetchArticles, selectArticle } from '../../src/actions'
 
 
 class ArticleList extends Component {
@@ -11,15 +12,20 @@ class ArticleList extends Component {
     this.props.dispatch(fetchArticles())
   }
 
+  handleClickArticle(e, articleId) {
+    e.preventDefault()
+    this.props.dispatch(selectArticle(articleId))
+    this.props.history.push('/detail')
+  }
+
   renderArticles() {
     return (
       <div>
       { this.props.articles.map((article) => {
           return (
-            <Article key={article._id} {...article}/>
+            <Article onClickHandle={ this.handleClickArticle.bind(this) } key={article._id} {...article}/>
           )
-        })
-      }
+        }) }
         <Paginate />
       </div>
     )
@@ -34,6 +40,7 @@ class ArticleList extends Component {
   }
 }
 
+
 const mapStateToProps = (state) => {
   const {items: articles, isGetting } = state.articles
 
@@ -43,4 +50,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(ArticleList)
+export default connect(mapStateToProps)(withRouter(ArticleList))

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_ARTICLES, CHANGE_PAGE, GETTING_ARTICLES } from './types';
+import { FETCH_ARTICLES, CHANGE_PAGE, GETTING_ARTICLES, SELECT_ARTICLE } from './types';
 
 const url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json'
 const apiKey = '3b2984fef8a143f0a522a88a34c2dd3e'
@@ -38,4 +38,13 @@ export const selectPreviousPage = (previousPage) => dispatch => {
     currentPage: previousPage
   })
   dispatch(fetchArticles(previousPage))
+}
+
+
+
+export const selectArticle = (articleId) => {
+  return {
+    type: SELECT_ARTICLE,
+    selectArticleId: articleId
+  }
 }
