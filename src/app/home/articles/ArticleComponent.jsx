@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default (props) => {
+function ArticleComponent(props) => {
   const { snippet, multimedia, pub_date, source } = props;
   return (
     <div onClick={ (e) => props.onClickHandle(e, props._id) }>
@@ -10,3 +10,5 @@ export default (props) => {
     </div>
   );
 }
+
+export default ArticleComponent
