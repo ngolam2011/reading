@@ -1,3 +1,4 @@
+import React from 'react'
 import ArticleContainer from './ArticleContainer'
 
 function ArticlesComponent({
@@ -5,7 +6,7 @@ function ArticlesComponent({
 }) {
   return (
     articles.map(article => {
-      return <ArticleComponent key={ article._id } { ...article } />
+      return <ArticleContainer key={ article._id } { ...article } />
     })
   )
 }

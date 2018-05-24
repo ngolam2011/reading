@@ -1,13 +1,15 @@
+import React from 'react'
 
 function PaginateComponent({
   nextPage,
-  previousPage
+  previousPage,
+  currentPage
 }) {
   return (
     <div>
-      <a href="#" onClick={ () => nextPage() }>Previous</a>
+      <a href="#" onClick={ (e) => nextPage(e, currentPage) }>Previous</a>
       ....
-      <a href="#" onClick={ () => previousPage() }>Next</a>
+      <a href="#" onClick={ (e) => previousPage(e, currentPage) }>Next</a>
     </div>
   )
 }

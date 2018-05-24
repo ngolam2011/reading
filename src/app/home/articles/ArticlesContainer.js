@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 import ArticlesComponent from './ArticlesComponent'
 
 const mapStateToProps = (state) => {
-  const {items: articles, isGetting } = state.articles
-
+  const { articles } = state.home
+  
   return {
     articles
   }

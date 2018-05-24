@@ -3,7 +3,9 @@ import ReadingComponent from './ReadingComponent'
 
 
 const mapStateToProps = (state) => {
-  const {articles: { items: articles }, selectedArticle } = state
+  const { articles } = state.home
+  const { selectedArticle } = state.reading
+
   const articleDetail = articles.find((ele) => ele._id === selectedArticle)
 
   return {

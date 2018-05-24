@@ -1,11 +1,13 @@
-const FETCH_ARTICLES = 'fetch_articles'
-const CHANGE_PAGE = 'change_page'
-const GETTING_ARTICLES = 'getting_articles'
-const SELECT_ARTICLE = 'select_article'
+const GET_ARTICLES = 'get_articles'
+const RECEIVE_ARTICLES = 'receive_articles'
+const REDIRECT_READING = 'redirect_reading'
+const NEXT_PAGE = 'next_page'
+const PREVIOUS_PAGE = 'previous_page'
 
 export default {
-  FETCH_ARTICLES,
-  CHANGE_PAGE,
-  GETTING_ARTICLES,
-  SELECT_ARTICLE
+  GET_ARTICLES,
+  RECEIVE_ARTICLES,
+  REDIRECT_READING,
+  NEXT_PAGE,
+  PREVIOUS_PAGE
 }

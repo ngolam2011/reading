@@ -1,8 +1,4 @@
-import React, { Component } from 'react'
-import Article from './Article'
-import Paginate from './Paginate'
-import { connect } from 'react-redux'
-import { fetchArticles } from '../../src/actions'
+import React from 'react'
 
 function ReadingComponent({ articleDetail }) {
   return (
@@ -13,3 +9,4 @@ function ReadingComponent({ articleDetail }) {
 }
 
 
+export default ReadingComponent

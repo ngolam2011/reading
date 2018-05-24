@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route }  from 'react-router-dom'
-import './App.css'
-import Dashboard from './Dashboard'
-import ArticleDetail from './ArticleDetail'
+import HomeContainer from './home/HomeContainer'
+import ReadingContainer from './reading/ReadingContainer'
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div>
-          <Route path="/" exact component={ Dashboard } />
-          <Route path="/detail" component={ ArticleDetail } />
+          <Route path="/" exact component={ HomeContainer } />
+          <Route path="/reading" component={ ReadingContainer } />
         </div>
       </BrowserRouter>
     )
